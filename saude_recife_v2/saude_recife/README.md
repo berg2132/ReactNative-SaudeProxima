@@ -114,44 +114,7 @@ GET https://dados.recife.pe.gov.br/api/3/action/datastore_search
 
 ---
 
-## 🚀 Como Rodar o Projeto
 
-### Pré-requisitos
-
-- Node.js 18+
-- MongoDB instalado e rodando (ou conta no MongoDB Atlas)
-- Expo CLI (`npm install -g expo-cli`)
-- App Expo Go instalado no celular
-
-### 1. Backend
-
-```bash
-cd backend
-npm install
-npm run dev
-```
-
-> O servidor inicia na porta `3333`. Acesse `http://localhost:3333/` para o health check.
-
-**Variáveis de ambiente (opcional):**
-```bash
-MONGO_URI=mongodb+srv://usuario:senha@cluster.mongodb.net/saudeRecifeDB
-PORT=3333
-```
-
-### 2. Mobile
-
-```bash
-cd mobile
-npm install
-npx expo start
-```
-
-Escaneie o QR Code com o app **Expo Go** no seu celular.
-
-> ⚠️ **Importante:** Abra `src/services/backendApi.js` e troque `API_URL` pelo IP local do seu PC na rede Wi-Fi (ex: `http://192.168.1.100:3333`) para testes locais.
-
----
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -171,15 +134,3 @@ Escaneie o QR Code com o app **Expo Go** no seu celular.
 
 ---
 
-## 📐 Decisões de Arquitetura
-
-- **Separação de responsabilidades:** chamadas de API isoladas em `/services`, mantendo as telas (`/screens`) focadas apenas na UI.
-- **Fórmula de Haversine:** implementada no cliente para calcular distâncias reais entre coordenadas geográficas sem depender de APIs de mapas pagas.
-- **useFocusEffect:** usado na HistoryScreen para garantir que o histórico seja sempre atualizado ao entrar na tela, sem requerer botão manual de refresh.
-- **Modal de check-in:** experiência UX mais fluida — o usuário avalia e comenta sem sair da tela principal.
-
----
-
-## 👨‍💻 Autor
-
-Desenvolvido como projeto acadêmico de React Native + Node.js.
